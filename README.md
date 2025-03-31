@@ -1,4 +1,4 @@
-# Citron-AppImage
+# Sudachi-AppImage
 
 This repository makes builds for **aarch64**, **x86_64** (generic) and **x86_64_v3**. If your CPU is less than 10 years old use the x86_64_v3 build since it has a significant performance boost.
 
