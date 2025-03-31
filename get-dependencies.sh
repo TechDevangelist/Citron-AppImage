@@ -33,6 +33,7 @@ pacman -Syu --noconfirm \
 	enet \
 	ffmpeg \
 	ffmpeg4.4 \
+ 	fmt \
 	gamemode \
 	git \
 	glslang \
@@ -125,12 +126,12 @@ pacman -Syu --noconfirm \
 	python-sphinx
  
 
-sed -i 's|EUID == 0|EUID == 69|g' /usr/bin/makepkg
-echo "Attempt to install FMT10"
-  git clone https://aur.archlinux.org/fmt10.git
-  cd fmt10
-  makepkg -si --noconfirm
-  cd ..
+#sed -i 's|EUID == 0|EUID == 69|g' /usr/bin/makepkg
+#echo "Attempt to install FMT10"
+#  git clone https://aur.archlinux.org/fmt10.git
+#  cd fmt10
+#  makepkg -si --noconfirm
+#  cd ..
   
 echo "All done!"
 echo "---------------------------------------------------------------"
