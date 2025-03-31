@@ -107,13 +107,11 @@ pacman -U --noconfirm \
 	./qt6-base-iculess.pkg.tar.zst \
 	./libxml2-iculess.pkg.tar.zst \
 	./ffmpeg-mini-x86_64.pkg.tar.zst \
- 	./fmt10.pkg.tar.zst \
 	./llvm-libs.pkg.tar.zst
 
 rm -f ./qt6-base-iculess.pkg.tar.zst \
 	./libxml2-iculess.pkg.tar.zst \
 	./ffmpeg-mini-x86_64.pkg.tar.zst \
-  	./fmt10.pkg.tar.zst \
 	./llvm-libs.pkg.tar.zst
 
 sed -i 's|EUID == 0|EUID == 69|g' /usr/bin/makepkg
