@@ -41,7 +41,7 @@ sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
 	find src -type f -name '*.cpp' -exec sed -i 's/boost::asio::io_service/boost::asio::io_context/g' {} \;
 
  	# Apply patches
-  	patch -p1 < ../patches/fmt11-support.patch
+  	patch -p1 -l --binary < ../patches/fmt11-support.patch
 
 	mkdir build
 	cd build
