@@ -63,7 +63,7 @@ pacman -Syu --noconfirm \
 	pulseaudio-alsa \
 	python-pip \
  	qt5-base \
-  	qa5-tools \
+  	qt5-tools \
 	qt6-base \
 	qt6ct \
 	qt6-multimedia \
