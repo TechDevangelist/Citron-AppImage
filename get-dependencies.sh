@@ -33,7 +33,6 @@ pacman -Syu --noconfirm \
 	enet \
 	ffmpeg \
 	ffmpeg4.4 \
-	fmt10 \
 	gamemode \
 	git \
 	glslang \
@@ -113,6 +112,12 @@ rm -f ./qt6-base-iculess.pkg.tar.zst \
 	./libxml2-iculess.pkg.tar.zst \
 	./ffmpeg-mini-x86_64.pkg.tar.zst \
 	./llvm-libs.pkg.tar.zst
+
+echo "Attempt to install FMT10"
+ git clone https://aur.archlinux.org/fmt10.git
+ cd fmt10
+ makepkg -si
+ cd ..
 
 echo "All done!"
 echo "---------------------------------------------------------------"
