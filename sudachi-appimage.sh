@@ -43,6 +43,7 @@ sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
  	# Apply patches
   	unix2dos ../patches/fmt11-support.patch
   	patch -p1 -l --binary < ../patches/fmt11-support.patch
+   	sed -i  -e 's/FFmpeg 4.3 REQUIRED QUIET COMPONENTS/FFmpeg REQUIRED QUIET COMPONENTS/' CMakeLists.txt
 
 	mkdir build
 	cd build
