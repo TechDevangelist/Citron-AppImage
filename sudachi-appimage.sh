@@ -43,7 +43,7 @@ sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
 	mkdir build
 	cd build
 	cmake .. -GNinja \
-		-DSUDACHI_USE_BUNDLED_VCPKG=OFF \
+		-DSUDACHI_USE_BUNDLED_VCPKG=ON \
 		-DSUDACHI_USE_BUNDLED_QT=OFF \
 		-DUSE_SYSTEM_QT=ON \
 		-DSUDACHI_USE_BUNDLED_FFMPEG=OFF \
