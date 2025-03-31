@@ -28,6 +28,7 @@ pacman -Syu --noconfirm \
 	curl \
 	dav1d \
 	desktop-file-utils \
+ 	dos2unix \
 	doxygen \
 	enet \
 	ffmpeg \
