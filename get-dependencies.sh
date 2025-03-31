@@ -66,7 +66,7 @@ pacman -Syu --noconfirm \
   	qt5-tools \
    	qt5ct \
     	qt5-multimedia \
-     	qt5-wayand \
+     	qt5-wayland \
 	qt6-base \
 	qt6ct \
 	qt6-multimedia \
