@@ -64,12 +64,16 @@ pacman -Syu --noconfirm \
 	python-pip \
  	qt5-base \
   	qt5-tools \
+   	qt5ct \
+    	qt5-multimedia \
+     	qt5-wayand \
 	qt6-base \
 	qt6ct \
 	qt6-multimedia \
 	qt6-tools \
 	qt6-wayland \
 	sdl2 \
+ 	sdl3 \
 	strace \
 	unzip \
 	vulkan-headers \
