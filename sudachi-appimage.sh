@@ -40,10 +40,13 @@ sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
 	#Replaces 'boost::asio::io_service' with 'boost::asio::io_context' for compatibility with Boost.ASIO versions 1.74.0 and later
 	find src -type f -name '*.cpp' -exec sed -i 's/boost::asio::io_service/boost::asio::io_context/g' {} \;
 
+ 	# Apply patches
+  	
+
 	mkdir build
 	cd build
 	cmake .. -GNinja \
-		-DSUDACHI_USE_BUNDLED_VCPKG=ON \
+		-DSUDACHI_USE_BUNDLED_VCPKG=OFF \
 		-DSUDACHI_USE_BUNDLED_QT=OFF \
 		-DUSE_SYSTEM_QT=ON \
 		-DSUDACHI_USE_BUNDLED_FFMPEG=OFF \
