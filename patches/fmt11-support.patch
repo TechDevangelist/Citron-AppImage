@@ -1203,6 +1203,4 @@ diff -urN b/vcpkg.json a/vcpkg.json
 +            "version": "11.0.2"
          }
      ]
--}
-\ No newline at end of file
-+}
+}
