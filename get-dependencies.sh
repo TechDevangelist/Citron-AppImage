@@ -33,7 +33,7 @@ pacman -Syu --noconfirm \
 	enet \
 	ffmpeg \
 	ffmpeg4.4 \
-	fmt \
+	fmt10 \
 	gamemode \
 	git \
 	glslang \
