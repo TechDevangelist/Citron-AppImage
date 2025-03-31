@@ -56,6 +56,7 @@ sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
 		-DBUNDLE_SPEEX=ON \
 		-DSUDACHI_USE_FASTER_LD=OFF \
 		-DCMAKE_INSTALL_PREFIX=/usr \
+  		-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 		-DCMAKE_CXX_FLAGS="$ARCH_FLAGS -Wno-error -w" \
 		-DCMAKE_C_FLAGS="$ARCH_FLAGS" \
 		-DCMAKE_SYSTEM_PROCESSOR="$(uname -m)" \
