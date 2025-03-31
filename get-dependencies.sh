@@ -129,7 +129,7 @@ sed -i 's|EUID == 0|EUID == 69|g' /usr/bin/makepkg
 echo "Attempt to install FMT10"
   git clone https://aur.archlinux.org/fmt10.git
   cd fmt10
-  makepkg -si
+  makepkg -si --noconfirm
   cd ..
   
 echo "All done!"
