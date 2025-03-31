@@ -30,7 +30,7 @@ UPINFO="gh-releases-zsync|$(echo "$GITHUB_REPOSITORY" | tr '/' '|')|latest|*$ARC
 wget $REPO
 unzip latest -d sudachi
 dos2unix sudachi/setup.sh
-sed 's/s\c/s\/c' sudachi/setup.sh
+sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
 
 (
 	cd ./sudachi
