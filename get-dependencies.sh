@@ -14,6 +14,7 @@ LLVM_URL="https://github.com/pkgforge-dev/llvm-libs-debloated/releases/download/
 FFMPEG_URL="https://github.com/pkgforge-dev/llvm-libs-debloated/releases/download/continuous/ffmpeg-mini-$PKG_TYPE"
 QT6_URL="https://github.com/pkgforge-dev/llvm-libs-debloated/releases/download/continuous/qt6-base-iculess-$PKG_TYPE"
 LIBXML_URL="https://github.com/pkgforge-dev/llvm-libs-debloated/releases/download/continuous/libxml2-iculess-$PKG_TYPE"
+FMT10_URL="https://pkgbuild.com/~alucryd/extra-alucryd/x86_64/fmt-10.2.1-1-$PKG_TYPE"
 
 echo "Installing build dependencies..."
 echo "---------------------------------------------------------------"
@@ -101,23 +102,21 @@ wget --retry-connrefused --tries=30 "$LLVM_URL" -O ./llvm-libs.pkg.tar.zst
 wget --retry-connrefused --tries=30 "$QT6_URL" -O ./qt6-base-iculess.pkg.tar.zst
 wget --retry-connrefused --tries=30 "$LIBXML_URL" -O ./libxml2-iculess.pkg.tar.zst
 wget --retry-connrefused --tries=30 "$FFMPEG_URL" -O ./ffmpeg-mini-x86_64.pkg.tar.zst
+wget --retry-connrefused --tries=30 "$FMT10_URL" -O ./fmt10.pkg.tar.zst
 
 pacman -U --noconfirm \
 	./qt6-base-iculess.pkg.tar.zst \
 	./libxml2-iculess.pkg.tar.zst \
 	./ffmpeg-mini-x86_64.pkg.tar.zst \
+ 	./fmt10.pkg.tar.zst \
 	./llvm-libs.pkg.tar.zst
 
 rm -f ./qt6-base-iculess.pkg.tar.zst \
 	./libxml2-iculess.pkg.tar.zst \
 	./ffmpeg-mini-x86_64.pkg.tar.zst \
+  	./fmt10.pkg.tar.zst \
 	./llvm-libs.pkg.tar.zst
 
-echo "Attempt to install FMT10"
- git clone https://aur.archlinux.org/fmt10.git
- cd fmt10
- makepkg -si
- cd ..
 
 echo "All done!"
 echo "---------------------------------------------------------------"
