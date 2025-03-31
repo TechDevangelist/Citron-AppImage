@@ -4,8 +4,8 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  schedule:
-    - cron: "0 14 * * 0"
+  #schedule:
+  #  - cron: "0 14 * * 0"
   workflow_dispatch: {}
 
 jobs:
@@ -19,14 +19,14 @@ jobs:
             optimized: false
             name: "Sudachi build (Normal)"
             arch: x86_64
-          - runs-on: ubuntu-latest
-            optimized: true
-            name: "Sudachi Build (Optimized)"
-            arch: x86_64
-          - runs-on: ubuntu-24.04-arm
-            name: "Sudachi build (Normal)"
-            optimized: false
-            arch: aarch64
+          #- runs-on: ubuntu-latest
+          #  optimized: true
+          #  name: "Sudachi Build (Optimized)"
+          #  arch: x86_64
+          #- runs-on: ubuntu-24.04-arm
+          #  name: "Sudachi build (Normal)"
+          #  optimized: false
+          #  arch: aarch64
     container: ghcr.io/pkgforge-dev/archlinux:latest
     steps:
       - uses: actions/checkout@v4
