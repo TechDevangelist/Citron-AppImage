@@ -29,6 +29,7 @@ pacman -Syu --noconfirm \
 	dav1d \
 	desktop-file-utils \
 	doxygen \
+ 	dos2unix \
 	enet \
 	ffmpeg \
 	ffmpeg4.4 \
