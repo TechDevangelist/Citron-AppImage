@@ -115,15 +115,15 @@ rm -f ./qt6-base-iculess.pkg.tar.zst \
 	./ffmpeg-mini-x86_64.pkg.tar.zst \
 	./llvm-libs.pkg.tar.zst
 
-echo "Installing fmt10 build dependencies..."
-echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-	npm \
-	python-breathe \
-	python-docutils \
-	python-jinja \
-	python-six \
-	python-sphinx
+#echo "Installing fmt10 build dependencies..."
+#echo "---------------------------------------------------------------"
+#pacman -Syu --noconfirm \
+#	npm \
+#	python-breathe \
+#	python-docutils \
+#	python-jinja \
+#	python-six \
+#	python-sphinx
  
 
 #sed -i 's|EUID == 0|EUID == 69|g' /usr/bin/makepkg
