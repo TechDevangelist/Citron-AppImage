@@ -43,7 +43,8 @@ sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
  	# Apply patches
   	unix2dos ../patches/fmt11-support.patch
   	patch -p1 -l --binary < ../patches/fmt11-support.patch
-   	sed -i  -e 's/FFmpeg 4.3 REQUIRED QUIET COMPONENTS/FFmpeg REQUIRED QUIET COMPONENTS/' CMakeLists.txt
+   	sed -i -e 's/FFmpeg 4.3 REQUIRED QUIET COMPONENTS/FFmpeg REQUIRED QUIET COMPONENTS/' CMakeLists.txt
+    	sed -i -e 's/SDL_GetWindowProperties(window)/SDL_GetWindowProperties(render_window)/g' src/sudachi_cmd/emu_window/emu_window_sdl3_vk.cpp
 
 	mkdir build
 	cd build
