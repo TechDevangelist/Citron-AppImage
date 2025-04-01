@@ -70,6 +70,7 @@ sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
 	ninja
 	sudo ninja install
 	echo "$VERSION" >~/version
+	cd ~
 )
 rm -rf ./sudachi
 VERSION="$(cat ~/version)"
@@ -86,7 +87,7 @@ ln -s ./sudachi.svg ./.DirIcon
 wget --retry-connrefused --tries=30 "$LIB4BN" -O ./lib4bin
 chmod +x ./lib4bin
 xvfb-run -a -- ./lib4bin -p -v -e -s -k \
-	/usr/bin/citron* \
+	/usr/bin/sudachi* \
 	/usr/lib/libGLX* \
 	/usr/lib/libGL.so* \
 	/usr/lib/libEGL* \
