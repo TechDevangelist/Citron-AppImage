@@ -15,14 +15,14 @@ jobs:
     strategy:
       matrix:
         include:
-          - runs-on: ubuntu-latest
-            optimized: false
-            name: "Sudachi build (Normal)"
-            arch: x86_64
           #- runs-on: ubuntu-latest
-          #  optimized: true
-          #  name: "Sudachi Build (Optimized)"
+          #  optimized: false
+          #  name: "Sudachi build (Normal)"
           #  arch: x86_64
+          - runs-on: ubuntu-latest
+            optimized: true
+            name: "Sudachi Build (Optimized)"
+            arch: x86_64
           #- runs-on: ubuntu-24.04-arm
           #  name: "Sudachi build (Normal)"
           #  optimized: false
@@ -37,12 +37,12 @@ jobs:
         if: always()
         run: chmod +x ./get-dependencies.sh && ./get-dependencies.sh
 
-      - name: Compile Sudachi (Normal)
-        if: ${{ matrix.optimized == false }}
-        run: |
-          chmod +x ./sudachi-appimage.sh && ./sudachi-appimage.sh
-          mkdir -p dist
-          mv *.AppImage* dist/
+      #- name: Compile Sudachi (Normal)
+      #  if: ${{ matrix.optimized == false }}
+      #  run: |
+      #    chmod +x ./sudachi-appimage.sh && ./sudachi-appimage.sh
+      #    mkdir -p dist
+      #    mv *.AppImage* dist/
 
       - name: Compile Sudachi (Optimized)
         if: ${{ matrix.optimized == true }}
