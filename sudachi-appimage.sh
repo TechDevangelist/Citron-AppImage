@@ -27,7 +27,7 @@ fi
 UPINFO="gh-releases-zsync|$(echo "$GITHUB_REPOSITORY" | tr '/' '|')|latest|*$ARCH.AppImage.zsync"
 
 # BUILD SUDACHI
-wget $REPO
+wget --no-verbose --show-progress --progress=dot:mega $REPO
 unzip -q latest -d sudachi
 dos2unix sudachi/setup.sh
 sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
