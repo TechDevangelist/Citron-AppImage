@@ -98,10 +98,10 @@ fi
 
 echo "Installing debloated pckages..."
 echo "---------------------------------------------------------------"
-wget --retry-connrefused --tries=30 "$LLVM_URL" -O ./llvm-libs.pkg.tar.zst
-wget --retry-connrefused --tries=30 "$QT6_URL" -O ./qt6-base-iculess.pkg.tar.zst
-wget --retry-connrefused --tries=30 "$LIBXML_URL" -O ./libxml2-iculess.pkg.tar.zst
-wget --retry-connrefused --tries=30 "$FFMPEG_URL" -O ./ffmpeg-mini-x86_64.pkg.tar.zst
+wget --no-verbose --show-progress --progress=dot:mega --retry-connrefused --tries=30 "$LLVM_URL" -O ./llvm-libs.pkg.tar.zst
+wget --no-verbose --show-progress --progress=dot:mega --retry-connrefused --tries=30 "$QT6_URL" -O ./qt6-base-iculess.pkg.tar.zst
+wget --no-verbose --show-progress --progress=dot:mega --retry-connrefused --tries=30 "$LIBXML_URL" -O ./libxml2-iculess.pkg.tar.zst
+wget --no-verbose --show-progress --progress=dot:mega --retry-connrefused --tries=30 "$FFMPEG_URL" -O ./ffmpeg-mini-x86_64.pkg.tar.zst
 
 
 pacman -U --noconfirm \
