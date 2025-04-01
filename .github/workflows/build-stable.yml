@@ -85,13 +85,13 @@ jobs:
         with:
           name: sudachi-optimized-appimage-x86_64
 
-      - uses: actions/download-artifact@v4.1.9
-        with:
-          name: sudachi-normal-appimage-x86_64
+      #- uses: actions/download-artifact@v4.1.9
+      #  with:
+      #    name: sudachi-normal-appimage-x86_64
 
-      - uses: actions/download-artifact@v4.1.9
-        with:
-          name: sudachi-normal-appimage-aarch64
+      #- uses: actions/download-artifact@v4.1.9
+      #  with:
+      #    name: sudachi-normal-appimage-aarch64
 
       - uses: actions/download-artifact@v4.1.9
         with:
