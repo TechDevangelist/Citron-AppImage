@@ -41,7 +41,6 @@ sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
 	find src -type f -name '*.cpp' -exec sed -i 's/boost::asio::io_service/boost::asio::io_context/g' {} \;
 
  	# Apply patches
-     	patch -p1 < ../patches/radv-blacklist.patch
   	unix2dos ../patches/fmt11-support.patch
   	patch -p1 -l --binary < ../patches/fmt11-support.patch
 
@@ -61,6 +60,7 @@ sed -i -e 's/s\\c/s\/c/' sudachi/setup.sh
 		-DSUDACHI_USE_QT_WEB_ENGINE=OFF \
 		-DENABLE_QT_TRANSLATION=ON \
 		-DUSE_DISCORD_PRESENCE=OFF \
+  		-DSUDACHI_ENABLE_LTO=ON \
 		-DBUNDLE_SPEEX=ON \
 		-DSUDACHI_USE_FASTER_LD=OFF \
 		-DCMAKE_INSTALL_PREFIX=/usr \
