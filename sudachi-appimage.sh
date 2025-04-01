@@ -97,6 +97,16 @@ xvfb-run -a -- ./lib4bin -p -v -e -s -k \
 	/usr/lib/libXss.so* \
 	/usr/lib/libdecor-0.so* \
 	/usr/lib/libgamemode.so* \
+ 	/usr/lib/qt5/plugins/audio/* \
+	/usr/lib/qt5/plugins/bearer/* \
+	/usr/lib/qt5/plugins/imageformats/* \
+	/usr/lib/qt5/plugins/iconengines/* \
+	/usr/lib/qt5/plugins/platforms/* \
+	/usr/lib/qt5/plugins/platformthemes/* \
+	/usr/lib/qt5/plugins/platforminputcontexts/* \
+	/usr/lib/qt5/plugins/styles/* \
+	/usr/lib/qt5/plugins/xcbglintegrations/* \
+	/usr/lib/qt5/plugins/wayland-*/* \
 	/usr/lib/qt6/plugins/audio/* \
 	/usr/lib/qt6/plugins/bearer/* \
 	/usr/lib/qt6/plugins/imageformats/* \
