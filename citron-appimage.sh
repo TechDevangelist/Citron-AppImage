@@ -14,10 +14,6 @@ if [ "$ARCH" = 'x86_64' ]; then
 		echo "Making x86-64-v3 optimized build of citron"
 		ARCH="${ARCH}_v3"
 		ARCH_FLAGS="-march=x86-64-v3 -O3"
-  	elif [ "$1" = 'steamdeck' ]; then
-		echo "Making Steam Deck optimized build of citron"
-		ARCH="znver2"
-		ARCH_FLAGS="-march=znver2 -O3"
 	else
 		echo "Making x86-64 generic build of citron"
 		ARCH_FLAGS="-march=x86-64 -mtune=generic -O3"
