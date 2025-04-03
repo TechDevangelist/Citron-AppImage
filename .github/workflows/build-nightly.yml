@@ -4,8 +4,8 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
+#  schedule:
+#    - cron: "0 0 * * *"
   workflow_dispatch: {}
 
 jobs:
@@ -53,10 +53,19 @@ jobs:
           mkdir -p dist
           mv *.AppImage* dist/
 
+      - name: Compile Citron (SteamDeck)
+        if: ${{ matrix.optimized == true }}
+        run: |
+          rm -rf ./AppDir || true
+          sudo pacman -R --noconfirm citron || true
+          chmod +x ./citron-appimage.sh && DEVEL=true ./citron-appimage.sh steamdeck
+          mkdir -p dist
+          mv *.AppImage* dist/
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4.6.1
         with:
-          name: citron-${{ matrix.optimized && 'optimized' || 'normal' }}-appimage-${{ matrix.arch }}
+          name: citron-${{ matrix.optimized && 'optimized' || 'normal' || 'steamdeck' }}-appimage-${{ matrix.arch }}
           path: "dist"
 
       - name: Check version file
@@ -89,6 +98,10 @@ jobs:
         with:
           name: citron-normal-appimage-x86_64
 
+      - uses: actions/download-artifact@v4.1.9
+        with:
+          name: citron-steamdeck-appimage-x86_64
+          
       - uses: actions/download-artifact@v4.1.9
         with:
           name: citron-normal-appimage-aarch64
