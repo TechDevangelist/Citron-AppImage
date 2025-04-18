@@ -62,7 +62,7 @@ fi
 		-DCITRON_CHECK_SUBMODULES=OFF \
 		-DCITRON_USE_LLVM_DEMANGLE=OFF \
 		-DCITRON_ENABLE_LTO=ON \
-		-DCITRON_USE_QT_MULTIMEDIA=ON \
+		-DCITRON_USE_QT_MULTIMEDIA=OFF \
 		-DCITRON_USE_QT_WEB_ENGINE=OFF \
 		-DENABLE_QT_TRANSLATION=ON \
 		-DUSE_DISCORD_PRESENCE=OFF \
@@ -136,9 +136,6 @@ cd ..
 wget -q "$URUNTIME" -O ./uruntime
 chmod +x ./uruntime
 
-# Keep the mount point (speeds up launch time)
-sed -i 's|URUNTIME_MOUNT=[0-9]|URUNTIME_MOUNT=0|' ./uruntime
-
 #Add udpate info to runtime
 echo "Adding update information \"$UPINFO\" to runtime..."
 ./uruntime --appimage-addupdinfo "$UPINFO"
@@ -147,6 +144,7 @@ echo "Generating AppImage..."
 ./uruntime --appimage-mkdwarfs -f \
 	--set-owner 0 --set-group 0 \
 	--no-history --no-create-timestamp \
+	--categorize=hotness --hotness-list=citron.dwfsprof \
 	--compression zstd:level=22 -S26 -B32 \
 	--header uruntime \
 	-i ./AppDir -o Citron-"$VERSION"-anylinux-"$ARCH".AppImage
